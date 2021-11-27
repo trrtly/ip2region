@@ -14,13 +14,15 @@ composer require trrtly/ip2region
 ```php
 
 use Trrtly\Ip2region\Ip2region;
+use Hyperf\Di\Annotation\Inject;
 
 class Example
 {
     /**
      * @Inject
+     * @var Ip2region
      */
-    protected Ip2region $ip2region;
+    protected $ip2region;
 
     public function query()
     {
