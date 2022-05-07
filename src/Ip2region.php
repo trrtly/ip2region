@@ -58,7 +58,7 @@ class Ip2region
         $this->dbFile = is_null($ip2regionFile) ? __DIR__ . '/db/ip2region.db' : $ip2regionFile;
         //check and load the binary string for the first time
         $this->dbBinStr = file_get_contents($this->dbFile);
-        if ($this->dbBinStr == false) {
+        if (!$this->dbBinStr) {
             throw new Exception("Fail to open the db file {$this->dbFile}");
         }
         $this->firstIndexPtr = self::getLong($this->dbBinStr, 0);
@@ -130,10 +130,9 @@ class Ip2region
     /**
      * get the data block through the specified ip address or long ip numeric with binary search algorithm.
      *
-     * @param string ip
      * @param mixed $ip
+     * @return array|null Array or NULL for any error
      * @throws Exception
-     * @return mixed Array or NULL for any error
      */
     public function binarySearch($ip)
     {
@@ -146,7 +145,7 @@ class Ip2region
             //check and open the original db file
             if ($this->dbFileHandler == null) {
                 $this->dbFileHandler = fopen($this->dbFile, 'r');
-                if ($this->dbFileHandler == false) {
+                if (!$this->dbFileHandler) {
                     throw new Exception("Fail to open the db file {$this->dbFile}");
                 }
             }
