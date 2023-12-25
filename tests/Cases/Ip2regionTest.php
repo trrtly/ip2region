@@ -23,4 +23,13 @@ class Ip2regionTest extends AbstractTestCase
         $this->assertArrayHasKey('region', $region);
         $this->assertStringContainsString('厦门', $region['region']);
     }
+
+    public function testIp2regionGetHeader()
+    {
+        /** @var Ip2region $ip2region */
+        $ip2region = make(Ip2region::class);
+        $header = $ip2region->getHeader();
+        $this->assertIsArray($header);
+        $this->assertArrayHasKey('version', $header);
+    }
 }

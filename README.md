@@ -1,7 +1,12 @@
 # hyperf ip2region
 
-针对 hyperf 的 [ip2region](https://github.com/lionsoul2014/ip2region) 组件，采用速度最快的 [memorySearch](https://github.com/lionsoul2014/ip2region#ip2region-%E5%B9%B6%E5%8F%91%E4%BD%BF%E7%94%A8) 
+针对 hyperf 的 [ip2region](https://github.com/lionsoul2014/ip2region) 组件，采用速度最快的 [memorySearch](https://github.com/lionsoul2014/ip2region/blob/master/binding/php/ReadMe.md#%E7%BC%93%E5%AD%98%E6%95%B4%E4%B8%AA-xdb-%E6%95%B0%E6%8D%AE) 
 方式查询，在框架初始化时就将db文件载入内存
+
+参考
+- [ip2region](https://github.com/lionsoul2014/ip2region?tab=readme-ov-file#2%E6%8A%80%E6%9C%AF%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB)
+- [数据结构和查询过程](https://mp.weixin.qq.com/s/ndjzu0BgaeBmDOCw5aqHUg)
+- [兼容Ip2Region](https://github.com/zoujingli/ip2region/blob/master/Ip2Region.php)
 
 ## 安装
 
