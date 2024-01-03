@@ -13,6 +13,8 @@ namespace HyperfTest\Cases;
 
 use Trrtly\Ip2region\Ip2region;
 
+use function Hyperf\Support\make;
+
 class Ip2regionTest extends AbstractTestCase
 {
     public function testIp2regionMemorySearch()
